@@ -1,0 +1,170 @@
+<!-- <div class="container">
+  <h1 class="my-4">PRODUCT DETAIL</h1>
+  <hr class="mt-2 mb-5">
+  <div class="card mb-3" style="max-width: 600px;" *ngIf='product'>
+    <div class="row no-gutters">
+      <div class="col-md-13">
+        <img [src]="product.img" class="card-img" alt="">
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <h5 class="card-title"> {{product.name}}</h5>
+          <p class="card-text">${{product.price}}</p>
+          <p class="card-text"><small class="text-muted">{{product.status}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!--  -->
+
+  <div class="card" *ngIf='product'>
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+          
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1"><img [src]="product.img" class="card-img"  /></div>
+            
+          </div>
+          
+          
+        </div>
+        <div class="details col-md-6">
+          <h5 class="card-title"> {{product.name}}</h5>
+          <div class="rating">
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <span class="review-no">41 reviews</span>
+          </div>
+          <p class="card-text"><small class="text-muted">{{product.status}}</small></p>
+
+          <h4 class="price">current price: <span>${{product.price}}</span></h4>
+          <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+          
+          <h5 class="colors">colors:
+            <span class="color black" data-toggle="tooltip" title="Not In store"><i class="fas fa-check" style="color: white;"></i></span>
+            <span class="color green"></span>
+            <span class="color white"></span>
+          </h5>
+          <div class="action">
+            <a href="motocyles/contact"><button class="add-to-cart btn btn-default" type="button">Contact</button></a>
+            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card my-4">
+      <h5 class="card-header">Leave a Comment:</h5>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Single Comment -->
+    <div class="media mb-4">
+      <img class="d-flex mr-3 rounded-circle"
+        src="https://scontent.fhan5-4.fna.fbcdn.net/v/t1.0-9/106420277_959787167815416_5325321118193875010_o.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=ez6aY6cUAOUAX_6Lo-j&_nc_ht=scontent.fhan5-4.fna&oh=d3f2d00333a39e51774a8e4aab34c80a&oe=5F7E0570"
+        style="width: 50px;height: 50px;">
+      <div class="media-body">
+        <h5 class="mt-0">Nguyen Tien Luc</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+        vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+        lacinia congue felis in faucibus.
+      </div>
+    </div>
+  
+    <!-- Comment with nested comments -->
+    <div class="media mb-4">
+      <img class="d-flex mr-3 rounded-circle"
+        src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/118331739_2718186198469975_8813777779095146155_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=qqDLVNxxtkgAX8g3ztr&_nc_ht=scontent.fhan5-1.fna&oh=6db8d447e521602938dc276655bd9e0e&oe=5F7F7437"
+        style="width: 50px;height: 50px;">
+  
+      <div class="media-body">
+        <h5 class="mt-0">찐응억안 </h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+        vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+        lacinia congue felis in faucibus.
+  
+        <div class="media mt-4">
+          <img class="d-flex mr-3 rounded-circle"
+            src="https://scontent.fhan5-2.fna.fbcdn.net/v/t1.0-9/82025051_2509759832570249_4090733633910865920_o.jpg?_nc_cat=102&_nc_sid=a4a2d7&_nc_ohc=hf8Lc4OM35gAX91O7o6&_nc_ht=scontent.fhan5-2.fna&oh=dfac0781ca02817727667ef57ad46745&oe=5F80A896"
+            style="width: 50px;height: 50px;">
+  
+          <div class="media-body">
+            <h5 class="mt-0">Nguyen Binh Minh</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+            odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+            fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+  
+        <div class="media mt-4">
+          <img class="d-flex mr-3 rounded-circle"
+            src="https://scontent.fhan5-3.fna.fbcdn.net/v/t1.0-9/89016961_647224799368478_8820268100332027904_o.jpg?_nc_cat=111&_nc_sid=8bfeb9&_nc_ohc=yMMK4pHEV1wAX8x2Rw5&_nc_ht=scontent.fhan5-3.fna&oh=53ee24ad9acaa8be22b769f53e2f561e&oe=5F7FA590"
+            style="width: 50px;height: 50px;">
+  
+          <div class="media-body">
+            <h5 class="mt-0">Nghiem Đinh Phuoc</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+            odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+            fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  
+
+<!--  -->
+<div class="container">
+<br>
+<div class="row">
+  <div class="col-lg-6">
+    <h2>Modern Business Features</h2>
+    <p>The Modern Business template by Start Bootstrap includes:</p>
+    <ul>
+      <li>
+        <strong>Bootstrap v4</strong>
+      </li>
+      <li>jQuery</li>
+      <li>Font Awesome</li>
+      <li>Working contact form with validation</li>
+      <li>Unstyled page elements for easy customization</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit,
+      quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+  </div>
+  <div class="col-lg-6">
+    <img class="img-fluid rounded" src="https://dcassetcdn.com/design_img/2346589/478440/478440_12255648_2346589_0ff59d26_image.jpg"
+      alt="">
+  </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Call to Action Section -->
+<div class="row mb-4">
+  <div class="col-md-8">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti
+      beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+  </div>
+  <div class="col-md-4">
+    <a class="btn btn-primary d-block w-100 btn-lg" href="motocyles/contact">Call to Action</a>
+  </div>
+</div>
+</div>
+
+<br>

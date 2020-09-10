@@ -1,0 +1,54 @@
+<form [formGroup]="form">
+  <h1>Add Product</h1>
+  <!-- <div class="form-group">
+        <label for="">Product ID</label>
+        <input type="text" class="form-control" disabled name="id" [(ngModel)]="product.id">
+      </div> -->
+  <div class="form-group">
+    <label for="ProductName">Product Name</label>
+    <!-- <input type="text" class="form-control" name="name"  [(ngModel)]="product.name" formControlName="productName" [ngClass]="{'is-invalid':
+      form.get('productName').touched && form.get('productName').invalid}"> -->
+    <input type="text" class="form-control" name="name" id="name" formControlName="name">
+    <label *ngIf="productName" class="text-danger"> {{productName}}</label>
+  </div>
+
+  <div class="form-group">
+    <label for="">Product photo</label>
+    <!-- <input type="text" class="form-control" name="photo"  [(ngModel)]="product.img"
+        formControlName="productPhoto"[ngClass]="{'is-invalid':
+      form.get('productPhoto').touched && form.get('productPhoto').invalid}"/> -->
+    <!-- <input type="text" class="form-control" name="img" 
+        formControlName="img"/> -->
+    <input type='file' id="img" (change)="onSelectFile($event)" formControlName="img">
+    <label *ngIf="ProductImage" class="text-danger"> {{ProductImage}}</label>
+    <br>
+		<img style="width: 400px; height: 185px;" [src]="url">
+  </div>
+
+  <div class="form-group">
+    <label for="">Price</label>
+    <!-- <input type="number" class="form-control" name="price" [(ngModel)]="product.price" formControlName="productPrice"[ngClass]="{'is-invalid':
+      form.get('productPrice').touched && form.get('productPrice').invalid}"> -->
+    <input type="number" class="form-control" id="price" name="price" formControlName="price">
+    <label *ngIf="productPrice" class="text-danger"> {{productPrice}}</label>
+  </div>
+
+  <div class="form-group">
+    <label for="">Status</label>
+    <!-- <textarea type="text" style="height: 200px;" class="form-control" name="status" [(ngModel)]="product.status"  formControlName="productStatus"[ngClass]="{'is-invalid':
+        form.get('productStatus').touched && form.get('productStatus').invalid}"></textarea> -->
+    <textarea type="text" style="height: 200px;" class="form-control" id="status" name="status"
+      formControlName="status"></textarea>
+    <label *ngIf="ProductStatus" class="text-danger"> {{ProductStatus}}</label>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" [disabled]="!form.valid" (click)="addProduct()">Add Product<i
+        style="margin-left: 5px; width: 10px; height: 7px;" class="fas fa-paper-plane"></i></button>
+
+    <button class="btn btn-primary" style="margin-left: 5px;" (click)="clear()">Reset<i
+        style="margin-left: 5px; width: 10px; height: 7px;" class="fas fa-undo-alt"></i></button>
+
+    <button class="btn btn-primary" style="margin-left: 5px;" routerLink="/admin">Back<i
+        style="margin-left: 5px; width: 10px; height: 7px;" class="fas fa-sign-out-alt"></i></button>
+  </div>
+</form>
